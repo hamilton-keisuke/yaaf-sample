@@ -1,6 +1,12 @@
 <h1>New parent</h1>
 
-<%= render "form", parent: @parent %>
+<%= form_with model: @form, method: :post, url: parents_path do |f| %>
+  <h2>Parent</h2>
+  <%= f.label :parent_name, style: "display: block" %>
+  <%= f.text_field :parent_name %>
+  <br />
+  <%= f.submit "Create Parent" %>
+<% end %>
 
 <br>
 
