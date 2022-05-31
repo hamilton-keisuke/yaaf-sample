@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is [yaaf gem](https://github.com/rootstrap/yaaf) test.
+This is only parent and child model. (Parent has_many :children, Child belongs_to :parent)
 
-Things you may want to cover:
+# Version
 
-* Ruby version
+yaaf 2.2.0
+rails 7.0.3
 
-* System dependencies
+# How to run
 
-* Configuration
+1. Run Docker
 
-* Database creation
+```
+$ make build
+$ make up
+$ make bash
+```
 
-* Database initialization
+2. Run db migrate in docker container
 
-* How to run the test suite
+```
+# rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Run Rails in docker container
 
-* Deployment instructions
+```
+# rails s -b 0.0.0.0
+```
 
-* ...
+Then, you can show http://localhost:3000/
