@@ -27,7 +27,7 @@ class ParentsController < ApplicationController
       @form.save
       redirect_to parents_url
     else
-      raise "create error!"
+      raise "#{@form.errors.full_messages}"
     end
 
     # @parent = Parent.new(parent_params)
@@ -78,6 +78,6 @@ class ParentsController < ApplicationController
     end
 
     def new_parent_child_params
-      params.require(:parent_child_form).permit(:parent_name)
+      params.require(:parent_child_form).permit(:parent_name, :child_name)
     end
 end
