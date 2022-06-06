@@ -20,10 +20,10 @@ RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee
 RUN mkdir /app
 WORKDIR /app
 
-# COPY Gemfile /app/Gemfile
-# COPY Gemfile.lock /app/Gemfile.lock
-# RUN bundle install
-# COPY . /app
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+RUN bundle install
+COPY . /app
 
 RUN yarn install --check-files
 

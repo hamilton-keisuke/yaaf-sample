@@ -13,6 +13,6 @@ class ParentChildForm < YAAF::Form
   end
 
   def child
-    @child ||= Child.new(name: child_name)
+    @child ||= parent.children.new(name: child_name)
   end
 end
